@@ -24,6 +24,9 @@ keystore.get('todos', function(err, todos) {
   // todos:
   //   ['eat', 'sleep', 'repeat']
 });
+
+// Delete an item.
+keystore.delete('todos', function(err) {});
 ```
 
 
@@ -42,6 +45,8 @@ dataset.save({
 }, function() {});
 
 dataset.get(key, function() {});
+
+dataset.delete(key, function() {});
 ```
 
 #### With `gcloud-node` + `gcloud-keystore`:
@@ -51,6 +56,8 @@ var keystore = require('gcloud-keystore')(dataset);
 keystore.set('key', 'value', function() {});
 
 keystore.get('key', function() {});
+
+keystore.delete('key', function() {});
 ```
 
 
@@ -61,6 +68,15 @@ keystore.get('key', function() {});
 #### dataset
 
 A gcloud-node Datastore [Dataset](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset) instance.
+
+### keystore#delete(key, callback)
+
+#### key
+Type: `String|Number`
+
+#### callback
+Type: `Function`
+Executed with the same signature as [Dataset#delete](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset?method=delete).
 
 ### keystore#get(key, callback)
 

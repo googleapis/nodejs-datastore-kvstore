@@ -9,17 +9,22 @@ test('KeyStore is a function', function() {
   assert.equal(typeof KeyStore, 'function');
 });
 
-test('a KeyStore instance has a get and set method', function() {
+test('a KeyStore instance has a delete, get, and set method', function() {
   var keystore = new KeyStore(createDataset());
 
+  assert.equal(typeof keystore.delete, 'function');
   assert.equal(typeof keystore.get, 'function');
   assert.equal(typeof keystore.set, 'function');
 });
 
-test('get and set throw with invalid key', function() {
+test('delete, get, and set throw with invalid key', function() {
   var keystore = new KeyStore(createDataset());
 
   [undefined, function() {}, {}, true].forEach(function(key) {
+    assert.throws(function() {
+      keystore.delete(key);
+    }, /invalid key/i);
+
     assert.throws(function() {
       keystore.get(key);
     }, /invalid key/i);
@@ -30,15 +35,21 @@ test('get and set throw with invalid key', function() {
   });
 });
 
-test('get and set pipe through calls to the dataset', function() {
+test('delete, get, and set pipe through calls to the dataset', function() {
+  var deleteCalled = false;
   var getCalled = false;
   var saveCalled = false;
 
   var ds = createDataset();
+  ds.delete = function() { deleteCalled = true; };
   ds.get = function() { getCalled = true; };
   ds.save = function() { saveCalled = true; };
 
   var keystore = new KeyStore(ds);
+
+  keystore.delete(1);
+  assert.strictEqual(deleteCalled, true);
+
   keystore.get(1);
   assert.strictEqual(getCalled, true);
 
@@ -46,13 +57,17 @@ test('get and set pipe through calls to the dataset', function() {
   assert.strictEqual(saveCalled, true);
 });
 
-test('get and set create a key', function() {
+test('delete, get, and set create a key', function() {
   var keyCalled = false;
 
   var ds = createDataset();
   ds.key = function() { keyCalled = true; };
 
   var keystore = new KeyStore(ds);
+
+  keystore.delete(1);
+  assert.strictEqual(keyCalled, true);
+  keyCalled = false;
 
   keystore.get(1);
   assert.strictEqual(keyCalled, true);
@@ -65,6 +80,7 @@ test('get and set create a key', function() {
 function createDataset() {
   function Dataset() {
     this.key = function() {};
+    this.delete = function() {};
     this.get = function() {};
     this.save = function() {};
   }

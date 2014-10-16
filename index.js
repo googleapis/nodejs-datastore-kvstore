@@ -13,6 +13,14 @@ function KeyStore(dataset) {
   this.dataset = dataset;
 }
 
+KeyStore.prototype.delete = function(key, callback) {
+  if (!isValidKey(key)) {
+    throw new Error(invalidKeyError);
+  }
+  key = this.dataset.key(['KeyValue', key]);
+  this.dataset.delete(key, callback);
+};
+
 KeyStore.prototype.get = function(key, callback) {
   if (!isValidKey(key)) {
     throw new Error(invalidKeyError);
