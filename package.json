@@ -1,6 +1,6 @@
 {
   "name": "gcloud-keystore",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Use gcloud's Datastore as a key-value store.",
   "main": "index.js",
   "scripts": {
