@@ -1,26 +1,20 @@
 {
-  "name": "gcloud-keystore",
+  "name": "gcloud-kvstore",
   "version": "1.2.0",
   "description": "Use gcloud's Datastore as a key-value store.",
   "main": "index.js",
   "scripts": {
     "test": "node ./test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stephenplusplus/gcloud-keystore"
-  },
+  "repository": "stephenplusplus/gcloud-kvstore",
   "keywords": [
     "gcloud",
     "google",
     "cloud",
     "datastore",
-    "keyvalue"
+    "keyvalue",
+    "store"
   ],
   "author": "Stephen Sawchuk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stephenplusplus/gcloud-keystore/issues"
-  },
-  "homepage": "https://github.com/stephenplusplus/gcloud-keystore"
+  "license": "MIT"
 }

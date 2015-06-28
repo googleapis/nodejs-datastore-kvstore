@@ -1,39 +1,39 @@
-# gcloud-keystore
+# gcloud-kvstore
 > Use a [gcloud-node](https://github.com/GoogleCloudPlatform/gcloud-node) dataset as a Key/Value store.
 
 
 ## Install
 ```sh
-$ npm install --save gcloud-keystore
+$ npm install --save gcloud-kvstore
 ```
 
 
 ## Example
 ```js
-var keystore = require('gcloud-keystore');
+var kvstore = require('gcloud-kvstore');
 var gcloud = require('gcloud')(/*...*/);
 var dataset = gcloud.datastore.dataset();
 
-var keystore = keystore(dataset);
+var kvstore = kvstore(dataset);
 
 // Set an item.
-keystore.set('todos', ['eat', 'sleep', 'repeat'], function(err, key) {});
+kvstore.set('todos', ['eat', 'sleep', 'repeat'], function(err, key) {});
 
 // Get an item.
-keystore.get('todos', function(err, todos) {
+kvstore.get('todos', function(err, todos) {
   // todos:
   //   ['eat', 'sleep', 'repeat']
 });
 
 // Delete an item.
-keystore.delete('todos', function(err) {});
+kvstore.delete('todos', function(err) {});
 ```
 
 
 ## How
 [Google Cloud Datastore](https://cloud.google.com/datastore) is a managed, NoSQL, schemaless database for storing non-relational data. Datastore [entities](https://cloud.google.com/datastore/docs/concepts/entities) are complex objects. However, we can wrap this complexity to mimic a simple key/value store by storing a numeric or string "key" as the id of an entity.
 
-The example below shows the complexity that is hidden with `gcloud-keystore`.
+The example below shows the complexity that is hidden with `gcloud-kvstore`.
 
 #### With `gcloud-node`:
 ```js
@@ -49,27 +49,27 @@ dataset.get(key, function() {});
 dataset.delete(key, function() {});
 ```
 
-#### With `gcloud-node` + `gcloud-keystore`:
+#### With `gcloud-node` + `gcloud-kvstore`:
 ```js
-var keystore = require('gcloud-keystore')(dataset);
+var kvstore = require('gcloud-kvstore')(dataset);
 
-keystore.set('key', 'value', function() {});
+kvstore.set('key', 'value', function() {});
 
-keystore.get('key', function() {});
+kvstore.get('key', function() {});
 
-keystore.delete('key', function() {});
+kvstore.delete('key', function() {});
 ```
 
 
 ## API
 
-### keystore(dataset)
+### kvstore(dataset)
 
 #### dataset
 
 A gcloud-node Datastore [Dataset](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset) instance.
 
-### keystore#delete(key, callback)
+### kvstore#delete(key, callback)
 
 #### key
 Type: `String|Number`
@@ -78,7 +78,7 @@ Type: `String|Number`
 Type: `Function`
 Executed with the same signature as [Dataset#delete](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset?method=delete).
 
-### keystore#get(key, callback)
+### kvstore#get(key, callback)
 
 #### key
 Type: `String|Number`
@@ -87,7 +87,7 @@ Type: `String|Number`
 Type: `Function`
 Executed with (`err`, `value`)
 
-### keystore#set(key, value, callback)
+### kvstore#set(key, value, callback)
 
 #### key
 Type: `String|Number`

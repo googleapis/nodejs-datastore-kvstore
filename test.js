@@ -1,36 +1,36 @@
 'use strict';
 
 var assert = require('assert');
-var KeyStore = require('./index.js');
+var KVStore = require('./index.js');
 var successes = [];
 var tests = [];
 
-test('KeyStore is a function', function() {
-  assert.equal(typeof KeyStore, 'function');
+test('KVStore is a function', function() {
+  assert.equal(typeof KVStore, 'function');
 });
 
-test('a KeyStore instance has a delete, get, and set method', function() {
-  var keystore = new KeyStore(createDataset());
+test('a KVStore instance has a delete, get, and set method', function() {
+  var kvstore = new KVStore(createDataset());
 
-  assert.equal(typeof keystore.delete, 'function');
-  assert.equal(typeof keystore.get, 'function');
-  assert.equal(typeof keystore.set, 'function');
+  assert.equal(typeof kvstore.delete, 'function');
+  assert.equal(typeof kvstore.get, 'function');
+  assert.equal(typeof kvstore.set, 'function');
 });
 
 test('delete, get, and set throw with invalid key', function() {
-  var keystore = new KeyStore(createDataset());
+  var kvstore = new KVStore(createDataset());
 
   [undefined, function() {}, {}, true].forEach(function(key) {
     assert.throws(function() {
-      keystore.delete(key);
+      kvstore.delete(key);
     }, /invalid key/i);
 
     assert.throws(function() {
-      keystore.get(key);
+      kvstore.get(key);
     }, /invalid key/i);
 
     assert.throws(function() {
-      keystore.set(key);
+      kvstore.set(key);
     }, /invalid key/i);
   });
 });
@@ -45,15 +45,15 @@ test('delete, get, and set pipe through calls to the dataset', function() {
   ds.get = function() { getCalled = true; };
   ds.save = function() { saveCalled = true; };
 
-  var keystore = new KeyStore(ds);
+  var kvstore = new KVStore(ds);
 
-  keystore.delete(1);
+  kvstore.delete(1);
   assert.strictEqual(deleteCalled, true);
 
-  keystore.get(1);
+  kvstore.get(1);
   assert.strictEqual(getCalled, true);
 
-  keystore.set(1);
+  kvstore.set(1);
   assert.strictEqual(saveCalled, true);
 });
 
@@ -63,17 +63,17 @@ test('delete, get, and set create a key', function() {
   var ds = createDataset();
   ds.key = function() { keyCalled = true; };
 
-  var keystore = new KeyStore(ds);
+  var kvstore = new KVStore(ds);
 
-  keystore.delete(1);
+  kvstore.delete(1);
   assert.strictEqual(keyCalled, true);
   keyCalled = false;
 
-  keystore.get(1);
+  kvstore.get(1);
   assert.strictEqual(keyCalled, true);
   keyCalled = false;
 
-  keystore.set(1);
+  kvstore.set(1);
   assert.strictEqual(keyCalled, true);
 });
 

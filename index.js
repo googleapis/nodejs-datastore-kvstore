@@ -5,15 +5,15 @@ function isValidKey(key) {
   return typeof key === 'string' || typeof key === 'number';
 }
 
-function KeyStore(dataset) {
-  if (!(this instanceof KeyStore)) {
-    return new KeyStore(dataset);
+function KVStore(dataset) {
+  if (!(this instanceof KVStore)) {
+    return new KVStore(dataset);
   }
 
   this.dataset = dataset;
 }
 
-KeyStore.prototype.delete = function(key, callback) {
+KVStore.prototype.delete = function(key, callback) {
   if (!isValidKey(key)) {
     throw new Error(invalidKeyError);
   }
@@ -21,7 +21,7 @@ KeyStore.prototype.delete = function(key, callback) {
   this.dataset.delete(key, callback);
 };
 
-KeyStore.prototype.get = function(key, callback) {
+KVStore.prototype.get = function(key, callback) {
   if (!isValidKey(key)) {
     throw new Error(invalidKeyError);
   }
@@ -35,7 +35,7 @@ KeyStore.prototype.get = function(key, callback) {
   });
 };
 
-KeyStore.prototype.set = function(key, value, callback) {
+KVStore.prototype.set = function(key, value, callback) {
   if (!isValidKey(key)) {
     throw new Error(invalidKeyError);
   }
@@ -47,4 +47,4 @@ KeyStore.prototype.set = function(key, value, callback) {
   }, callback || function() {});
 };
 
-module.exports = KeyStore;
+module.exports = KVStore;
