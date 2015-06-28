@@ -14,19 +14,19 @@ var kvstore = require('gcloud-kvstore');
 var gcloud = require('gcloud')(/*...*/);
 var dataset = gcloud.datastore.dataset();
 
-var kvstore = kvstore(dataset);
+var store = kvstore(dataset);
 
 // Set an item.
-kvstore.set('todos', ['eat', 'sleep', 'repeat'], function(err, key) {});
+store.set('todos', ['eat', 'sleep', 'repeat'], function(err, key) {});
 
 // Get an item.
-kvstore.get('todos', function(err, todos) {
+store.get('todos', function(err, todos) {
   // todos:
   //   ['eat', 'sleep', 'repeat']
 });
 
 // Delete an item.
-kvstore.delete('todos', function(err) {});
+store.delete('todos', function(err) {});
 ```
 
 
@@ -51,13 +51,13 @@ dataset.delete(key, function() {});
 
 #### With `gcloud-node` + `gcloud-kvstore`:
 ```js
-var kvstore = require('gcloud-kvstore')(dataset);
+var store = require('gcloud-kvstore')(dataset);
 
-kvstore.set('key', 'value', function() {});
+store.set('key', 'value', function() {});
 
-kvstore.get('key', function() {});
+store.get('key', function() {});
 
-kvstore.delete('key', function() {});
+store.delete('key', function() {});
 ```
 
 
