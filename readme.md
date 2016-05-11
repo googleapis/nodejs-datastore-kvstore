@@ -1,5 +1,5 @@
 # gcloud-kvstore
-> Use a [gcloud-node](https://github.com/GoogleCloudPlatform/gcloud-node) dataset as a Key/Value store.
+> Use Datastore as a Key/Value store.
 
 
 ## Install
@@ -12,9 +12,9 @@ $ npm install --save gcloud-kvstore
 ```js
 var kvstore = require('gcloud-kvstore');
 var gcloud = require('gcloud')(/*...*/);
-var dataset = gcloud.datastore.dataset();
+var datastore = gcloud.datastore();
 
-var store = kvstore(dataset);
+var store = kvstore(datastore);
 
 // Set an item.
 store.set('todos', ['eat', 'sleep', 'repeat'], function(err, key) {});
@@ -37,21 +37,21 @@ The example below shows the complexity that is hidden with `gcloud-kvstore`.
 
 #### With `gcloud-node`:
 ```js
-var key = dataset.key(['KeyValue', 'key']);
+var key = datastore.key(['KeyValue', 'key']);
 
-dataset.save({
+datastore.save({
   key: key,
   value: 'value'
 }, function() {});
 
-dataset.get(key, function() {});
+datastore.get(key, function() {});
 
-dataset.delete(key, function() {});
+datastore.delete(key, function() {});
 ```
 
 #### With `gcloud-node` + `gcloud-kvstore`:
 ```js
-var store = require('gcloud-kvstore')(dataset);
+var store = require('gcloud-kvstore')(datastore);
 
 store.set('key', 'value', function() {});
 
@@ -63,11 +63,11 @@ store.delete('key', function() {});
 
 ## API
 
-### kvstore(dataset)
+### kvstore(datastore)
 
-#### dataset
+#### datastore
 
-A gcloud-node Datastore [Dataset](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset) instance.
+A gcloud-node [Datastore](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore) instance.
 
 ### kvstore#delete(key, callback)
 
@@ -76,7 +76,7 @@ Type: `String|Number`
 
 #### callback
 Type: `Function`
-Executed with the same signature as [Dataset#delete](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset?method=delete).
+Executed with the same signature as [Datastore#delete](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore?method=delete).
 
 ### kvstore#get(key, callback)
 
@@ -97,7 +97,7 @@ Type: `*`
 
 #### callback
 Type: `Function`
-Executed with the same signature as [Dataset#save](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore/dataset?method=save).
+Executed with the same signature as [Datastore#save](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore?method=save).
 
 
 ## Credit
