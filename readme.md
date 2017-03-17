@@ -11,8 +11,7 @@ $ npm install --save gcloud-kvstore
 ## Example
 ```js
 var kvstore = require('gcloud-kvstore');
-var gcloud = require('gcloud')(/*...*/);
-var datastore = gcloud.datastore();
+var datastore = require('@google-cloud/datastore')(/*...*/);
 
 var store = kvstore(datastore);
 
@@ -35,7 +34,7 @@ store.delete('todos', function(err) {});
 
 The example below shows the complexity that is hidden with `gcloud-kvstore`.
 
-#### With `gcloud-node`:
+#### With `@google-cloud/datastore`:
 ```js
 var key = datastore.key(['KeyValue', 'key']);
 
@@ -49,7 +48,7 @@ datastore.get(key, function() {});
 datastore.delete(key, function() {});
 ```
 
-#### With `gcloud-node` + `gcloud-kvstore`:
+#### With `@google-cloud/datastore` + `gcloud-kvstore`:
 ```js
 var store = require('gcloud-kvstore')(datastore);
 
@@ -67,7 +66,7 @@ store.delete('key', function() {});
 
 #### datastore
 
-A gcloud-node [Datastore](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore) instance.
+A [@google-cloud/datastore](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/latest/datastore) instance.
 
 ### kvstore#delete(key, callback)
 
@@ -76,7 +75,7 @@ Type: `String|Number`
 
 #### callback
 Type: `Function`
-Executed with the same signature as [Datastore#delete](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore?method=delete).
+Executed with the same signature as [Datastore#delete](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/latest/datastore?method=delete).
 
 ### kvstore#get(key, callback)
 
@@ -97,7 +96,7 @@ Type: `*`
 
 #### callback
 Type: `Function`
-Executed with the same signature as [Datastore#save](http://googlecloudplatform.github.io/gcloud-node/#/docs/master/datastore?method=save).
+Executed with the same signature as [Datastore#save](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/latest/datastore?method=save).
 
 
 ## Credit
