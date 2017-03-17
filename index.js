@@ -31,7 +31,7 @@ KVStore.prototype.get = function(key, callback) {
       callback(err);
       return;
     }
-    callback(null, entity && entity.data.value);
+    callback(null, entity && entity.value);
   });
 };
 
