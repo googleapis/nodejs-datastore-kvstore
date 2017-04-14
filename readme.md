@@ -1,16 +1,16 @@
-# gcloud-kvstore
+# google-cloud-kvstore
 > Use Datastore as a Key/Value store.
 
 
 ## Install
 ```sh
-$ npm install --save gcloud-kvstore
+$ npm install --save google-cloud-kvstore
 ```
 
 
 ## Example
 ```js
-var kvstore = require('gcloud-kvstore');
+var kvstore = require('google-cloud-kvstore');
 var datastore = require('@google-cloud/datastore')(/*...*/);
 
 var store = kvstore(datastore);
@@ -32,7 +32,7 @@ store.delete('todos', function(err) {});
 ## How
 [Google Cloud Datastore](https://cloud.google.com/datastore) is a managed, NoSQL, schemaless database for storing non-relational data. Datastore [entities](https://cloud.google.com/datastore/docs/concepts/entities) are complex objects. However, we can wrap this complexity to mimic a simple key/value store by storing a numeric or string "key" as the id of an entity.
 
-The example below shows the complexity that is hidden with `gcloud-kvstore`.
+The example below shows the complexity that is hidden with `google-cloud-kvstore`.
 
 #### With `@google-cloud/datastore`:
 ```js
@@ -48,9 +48,9 @@ datastore.get(key, function() {});
 datastore.delete(key, function() {});
 ```
 
-#### With `@google-cloud/datastore` + `gcloud-kvstore`:
+#### With `@google-cloud/datastore` + `google-cloud-kvstore`:
 ```js
-var store = require('gcloud-kvstore')(datastore);
+var store = require('google-cloud-kvstore')(datastore);
 
 store.set('key', 'value', function() {});
 
@@ -101,7 +101,7 @@ Executed with the same signature as [Datastore#save](https://googlecloudplatform
 
 ## Credit
 
-Concept originally created by [Patrick Costello](https://github.com/pcostell): https://github.com/GoogleCloudPlatform/gcloud-node/issues/256#issuecomment-58962323.
+Concept originally created by [Patrick Costello](https://github.com/pcostell): https://github.com/GoogleCloudPlatform/google-cloud-node/issues/256#issuecomment-58962323.
 
 
 ## License
