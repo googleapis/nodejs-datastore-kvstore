@@ -2,7 +2,10 @@
   "name": "google-cloud-kvstore",
   "version": "3.0.0",
   "description": "Use @google-cloud/datastore as a key-value store.",
-  "main": "index.js",
+  "main": "src/index.js",
+  "files": [
+    "src/"
+  ],
   "scripts": {
     "test": "mocha"
   },
