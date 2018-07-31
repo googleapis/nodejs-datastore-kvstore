@@ -4,7 +4,7 @@
   "description": "Use @google-cloud/datastore as a key-value store.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test.js"
+    "test": "mocha"
   },
   "repository": "stephenplusplus/google-cloud-kvstore",
   "keywords": [
@@ -17,5 +17,8 @@
     "store"
   ],
   "author": "Stephen Sawchuk",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
