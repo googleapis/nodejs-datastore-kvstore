@@ -8,13 +8,15 @@
 'use strict';
 
 import * as assert from 'assert';
-import {KVStore} from '../src';
+import {KVStore, Key, DeleteCallback, GetCallback, SetCallback, SetRequest, DataSet} from '../src';
 
-class Dataset {
-  key() {}
-  delete() {}
-  get() {}
-  save() {}
+function getDataset(): DataSet {
+  return {
+    key: (input: Key[]) => 0,
+    delete: (key: Key, callback: DeleteCallback) => {},
+    get: (key: Key, callback: GetCallback) => {},
+    save: (request: SetRequest, callback: SetCallback) => {}
+  };
 }
 
 function noop() {}
@@ -24,26 +26,26 @@ it('KVStore is a function', () => {
 });
 
 it('a KVStore instance has a delete, get, and set method', () => {
-  const kvstore = new KVStore(new Dataset());
+  const kvstore = new KVStore(getDataset());
   assert.strictEqual(typeof kvstore.delete, 'function');
   assert.strictEqual(typeof kvstore.get, 'function');
   assert.strictEqual(typeof kvstore.set, 'function');
 });
 
 it('delete, get, and set throw with invalid key', () => {
-  const kvstore = new KVStore(new Dataset());
+  const kvstore = new KVStore(getDataset());
 
   [undefined, () => {}, {}, true].forEach(key => {
     assert.throws(() => {
-      kvstore.delete(key, noop);
+      kvstore.delete(key as Key, noop);
     }, /invalid key/i);
 
     assert.throws(() => {
-      kvstore.get(key, noop);
+      kvstore.get(key as Key, noop);
     }, /invalid key/i);
 
     assert.throws(() => {
-      kvstore.set(key, null, noop);
+      kvstore.set(key as Key, null, noop);
     }, /invalid key/i);
   });
 });
@@ -53,7 +55,7 @@ it('delete, get, and set pipe through calls to the dataset', () => {
   let getCalled = false;
   let saveCalled = false;
 
-  const ds = new Dataset();
+  const ds = getDataset();
   ds.delete = () => {
     deleteCalled = true;
   };
@@ -69,7 +71,7 @@ it('delete, get, and set pipe through calls to the dataset', () => {
   kvstore.delete(1, noop);
   assert.strictEqual(deleteCalled, true);
 
-  kvstore.get(1, null);
+  kvstore.get(1, null!);
   assert.strictEqual(getCalled, true);
 
   kvstore.set(1, null, noop);
@@ -79,9 +81,10 @@ it('delete, get, and set pipe through calls to the dataset', () => {
 it('delete, get, and set create a key', () => {
   let keyCalled = false;
 
-  const ds = new Dataset();
-  ds.key = () => {
+  const ds = getDataset();
+  ds.key = (input) => {
     keyCalled = true;
+    return 0;
   };
 
   const kvstore = new KVStore(ds);
