@@ -2,18 +2,26 @@
   "name": "google-cloud-kvstore",
   "version": "3.0.0",
   "description": "Use @google-cloud/datastore as a key-value store.",
-  "main": "src/index.js",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "files": [
-    "src/"
+    "build/src"
   ],
   "scripts": {
-    "cover": "nyc --reporter=lcov mocha test/*.js && nyc report",
+    "cover": "nyc --reporter=lcov mocha build/test && nyc report",
     "docs": "jsdoc -c .jsdoc.js",
-    "lint": "eslint src/ test/ system-test/ samples/",
-    "prettier": "prettier --write src/*.js test/*.js system-test/*.js samples/*.js",
-    "test": "mocha test",
+    "lint": "eslint samples/ && npm run check",
+    "prettier": "prettier --write samples/*.js",
+    "test": "nyc mocha build/test",
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
-    "system-test": "mocha system-test --timeout 600000"
+    "system-test": "mocha build/system-test --timeout 600000",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check"
   },
   "repository": "GoogleCloudPlatform/google-cloud-kvstore",
   "keywords": [
@@ -28,17 +36,21 @@
   "author": "Stephen Sawchuk",
   "license": "MIT",
   "devDependencies": {
+    "@types/mocha": "^5.2.5",
     "codecov": "^3.0.4",
     "eslint": "^5.3.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-prettier": "^2.6.2",
+    "gts": "^0.8.0",
     "ink-docstrap": "^1.3.2",
     "intelli-espower-loader": "^1.0.1",
     "jsdoc": "^3.5.5",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
     "power-assert": "^1.6.0",
-    "prettier": "^1.14.0"
+    "prettier": "^1.14.0",
+    "source-map-support": "^0.5.6",
+    "typescript": "~3.0.0"
   }
 }

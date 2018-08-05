@@ -12,7 +12,8 @@ function isValidKey(key) {
   return typeof key === 'string' || typeof key === 'number';
 }
 
-class KVStore {
+export class KVStore {
+  dataset;
   constructor(dataset) {
     if (!(this instanceof KVStore)) {
       return new KVStore(dataset);
@@ -47,15 +48,12 @@ class KVStore {
       throw new Error(invalidKeyError);
     }
     this.dataset.save(
-      {
-        key: this.dataset.key(['KeyValue', key]),
-        data: {
-          value: value,
+        {
+          key: this.dataset.key(['KeyValue', key]),
+          data: {
+            value,
+          },
         },
-      },
-      callback || (() => {})
-    );
+        callback || (() => {}));
   }
 }
-
-module.exports = KVStore;
