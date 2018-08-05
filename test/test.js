@@ -18,15 +18,15 @@ function Dataset() {
 }
 
 it('KVStore is a function', function() {
-  assert.equal(typeof KVStore, 'function');
+  assert.strictEqual(typeof KVStore, 'function');
 });
 
 it('a KVStore instance has a delete, get, and set method', function() {
   var kvstore = new KVStore(new Dataset());
 
-  assert.equal(typeof kvstore.delete, 'function');
-  assert.equal(typeof kvstore.get, 'function');
-  assert.equal(typeof kvstore.set, 'function');
+  assert.strictEqual(typeof kvstore.delete, 'function');
+  assert.strictEqual(typeof kvstore.get, 'function');
+  assert.strictEqual(typeof kvstore.set, 'function');
 });
 
 it('delete, get, and set throw with invalid key', function() {
@@ -53,9 +53,15 @@ it('delete, get, and set pipe through calls to the dataset', function() {
   var saveCalled = false;
 
   var ds = new Dataset();
-  ds.delete = function() { deleteCalled = true; };
-  ds.get = function() { getCalled = true; };
-  ds.save = function() { saveCalled = true; };
+  ds.delete = function() {
+    deleteCalled = true;
+  };
+  ds.get = function() {
+    getCalled = true;
+  };
+  ds.save = function() {
+    saveCalled = true;
+  };
 
   var kvstore = new KVStore(ds);
 
@@ -73,7 +79,9 @@ it('delete, get, and set create a key', function() {
   var keyCalled = false;
 
   var ds = new Dataset();
-  ds.key = function() { keyCalled = true; };
+  ds.key = function() {
+    keyCalled = true;
+  };
 
   var kvstore = new KVStore(ds);
 
