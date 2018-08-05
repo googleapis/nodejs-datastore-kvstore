@@ -15,7 +15,7 @@
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "system-test": "mocha system-test --timeout 600000"
   },
-  "repository": "stephenplusplus/google-cloud-kvstore",
+  "repository": "GoogleCloudPlatform/google-cloud-kvstore",
   "keywords": [
     "gcloud",
     "google",
