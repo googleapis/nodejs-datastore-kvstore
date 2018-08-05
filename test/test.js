@@ -7,63 +7,62 @@
 
 'use strict';
 
-var assert = require('assert');
-var KVStore = require('../src');
+const assert = require('assert');
+const KVStore = require('../src');
 
 function Dataset() {
-  this.key = function() {};
-  this.delete = function() {};
-  this.get = function() {};
-  this.save = function() {};
+  this.key = () => {};
+  this.delete = () => {};
+  this.get = () => {};
+  this.save = () => {};
 }
 
-it('KVStore is a function', function() {
+it('KVStore is a function', () => {
   assert.strictEqual(typeof KVStore, 'function');
 });
 
-it('a KVStore instance has a delete, get, and set method', function() {
-  var kvstore = new KVStore(new Dataset());
-
+it('a KVStore instance has a delete, get, and set method', () => {
+  const kvstore = new KVStore(new Dataset());
   assert.strictEqual(typeof kvstore.delete, 'function');
   assert.strictEqual(typeof kvstore.get, 'function');
   assert.strictEqual(typeof kvstore.set, 'function');
 });
 
-it('delete, get, and set throw with invalid key', function() {
-  var kvstore = new KVStore(new Dataset());
+it('delete, get, and set throw with invalid key', () => {
+  const kvstore = new KVStore(new Dataset());
 
-  [undefined, function() {}, {}, true].forEach(function(key) {
-    assert.throws(function() {
+  [undefined, () => {}, {}, true].forEach(key => {
+    assert.throws(() => {
       kvstore.delete(key);
     }, /invalid key/i);
 
-    assert.throws(function() {
+    assert.throws(() => {
       kvstore.get(key);
     }, /invalid key/i);
 
-    assert.throws(function() {
+    assert.throws(() => {
       kvstore.set(key);
     }, /invalid key/i);
   });
 });
 
-it('delete, get, and set pipe through calls to the dataset', function() {
-  var deleteCalled = false;
-  var getCalled = false;
-  var saveCalled = false;
+it('delete, get, and set pipe through calls to the dataset', () => {
+  let deleteCalled = false;
+  let getCalled = false;
+  let saveCalled = false;
 
-  var ds = new Dataset();
-  ds.delete = function() {
+  const ds = new Dataset();
+  ds.delete = () => {
     deleteCalled = true;
   };
-  ds.get = function() {
+  ds.get = () => {
     getCalled = true;
   };
-  ds.save = function() {
+  ds.save = () => {
     saveCalled = true;
   };
 
-  var kvstore = new KVStore(ds);
+  const kvstore = new KVStore(ds);
 
   kvstore.delete(1);
   assert.strictEqual(deleteCalled, true);
@@ -75,15 +74,15 @@ it('delete, get, and set pipe through calls to the dataset', function() {
   assert.strictEqual(saveCalled, true);
 });
 
-it('delete, get, and set create a key', function() {
-  var keyCalled = false;
+it('delete, get, and set create a key', () => {
+  let keyCalled = false;
 
-  var ds = new Dataset();
-  ds.key = function() {
+  const ds = new Dataset();
+  ds.key = () => {
     keyCalled = true;
   };
 
-  var kvstore = new KVStore(ds);
+  const kvstore = new KVStore(ds);
 
   kvstore.delete(1);
   assert.strictEqual(keyCalled, true);
