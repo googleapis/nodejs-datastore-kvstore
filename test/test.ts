@@ -7,15 +7,17 @@
 
 'use strict';
 
-const assert = require('assert');
-const KVStore = require('../src');
+import * as assert from 'assert';
+import {KVStore} from '../src';
 
-function Dataset() {
-  this.key = () => {};
-  this.delete = () => {};
-  this.get = () => {};
-  this.save = () => {};
+class Dataset {
+  key() {}
+  delete() {}
+  get() {}
+  save() {}
 }
+
+function noop() {}
 
 it('KVStore is a function', () => {
   assert.strictEqual(typeof KVStore, 'function');
@@ -33,15 +35,15 @@ it('delete, get, and set throw with invalid key', () => {
 
   [undefined, () => {}, {}, true].forEach(key => {
     assert.throws(() => {
-      kvstore.delete(key);
+      kvstore.delete(key, noop);
     }, /invalid key/i);
 
     assert.throws(() => {
-      kvstore.get(key);
+      kvstore.get(key, noop);
     }, /invalid key/i);
 
     assert.throws(() => {
-      kvstore.set(key);
+      kvstore.set(key, null, noop);
     }, /invalid key/i);
   });
 });
@@ -64,13 +66,13 @@ it('delete, get, and set pipe through calls to the dataset', () => {
 
   const kvstore = new KVStore(ds);
 
-  kvstore.delete(1);
+  kvstore.delete(1, noop);
   assert.strictEqual(deleteCalled, true);
 
-  kvstore.get(1);
+  kvstore.get(1, null);
   assert.strictEqual(getCalled, true);
 
-  kvstore.set(1);
+  kvstore.set(1, null, noop);
   assert.strictEqual(saveCalled, true);
 });
 
@@ -84,14 +86,14 @@ it('delete, get, and set create a key', () => {
 
   const kvstore = new KVStore(ds);
 
-  kvstore.delete(1);
+  kvstore.delete(1, noop);
   assert.strictEqual(keyCalled, true);
   keyCalled = false;
 
-  kvstore.get(1);
+  kvstore.get(1, noop);
   assert.strictEqual(keyCalled, true);
   keyCalled = false;
 
-  kvstore.set(1);
+  kvstore.set(1, null, noop);
   assert.strictEqual(keyCalled, true);
 });
