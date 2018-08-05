@@ -46,12 +46,15 @@ KVStore.prototype.set = function(key, value, callback) {
   if (!isValidKey(key)) {
     throw new Error(invalidKeyError);
   }
-  this.dataset.save({
-    key: this.dataset.key(['KeyValue', key]),
-    data: {
-      value: value
-    }
-  }, callback || function() {});
+  this.dataset.save(
+    {
+      key: this.dataset.key(['KeyValue', key]),
+      data: {
+        value: value,
+      },
+    },
+    callback || function() {}
+  );
 };
 
 module.exports = KVStore;
