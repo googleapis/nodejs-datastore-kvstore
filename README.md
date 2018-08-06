@@ -10,22 +10,22 @@ $ npm install --save google-cloud-kvstore
 
 ## Example
 ```js
-var kvstore = require('google-cloud-kvstore');
-var datastore = require('@google-cloud/datastore')(/*...*/);
+const kvstore = require('google-cloud-kvstore');
+const datastore = require('@google-cloud/datastore')(/*...*/);
 
-var store = kvstore(datastore);
+const store = kvstore(datastore);
 
 // Set an item.
-store.set('todos', ['eat', 'sleep', 'repeat'], function(err, key) {});
+store.set('todos', ['eat', 'sleep', 'repeat'], (err, key) => {});
 
 // Get an item.
-store.get('todos', function(err, todos) {
+store.get('todos', (err, todos) => {
   // todos:
   //   ['eat', 'sleep', 'repeat']
 });
 
 // Delete an item.
-store.delete('todos', function(err) {});
+store.delete('todos', (err) => {});
 ```
 
 
@@ -36,29 +36,25 @@ The example below shows the complexity that is hidden with `google-cloud-kvstore
 
 #### With `@google-cloud/datastore`:
 ```js
-var key = datastore.key(['KeyValue', 'key']);
+const key = datastore.key(['KeyValue', 'key']);
 
 datastore.save({
   key: key,
   value: 'value'
-}, function() {});
+}, () => {});
 
-datastore.get(key, function() {});
+datastore.get(key, () => {});
 
-datastore.delete(key, function() {});
+datastore.delete(key, () => {});
 ```
 
 #### With `@google-cloud/datastore` + `google-cloud-kvstore`:
 ```js
-var store = require('google-cloud-kvstore')(datastore);
-
-store.set('key', 'value', function() {});
-
-store.get('key', function() {});
-
-store.delete('key', function() {});
+const store = require('google-cloud-kvstore')(datastore);
+store.set('key', 'value', () => {});
+store.get('key', () => {});
+store.delete('key', () => {});
 ```
-
 
 ## API
 
