@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "cover": "nyc --reporter=lcov mocha build/test && nyc report",
-    "docs": "jsdoc -c .jsdoc.js",
+    "docs": "echo no docs 👻",
     "lint": "eslint samples/ && npm run check",
     "prettier": "prettier --write samples/*.js",
     "test": "nyc mocha build/test",
