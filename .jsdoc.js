@@ -36,10 +36,10 @@ module.exports = {
     includePattern: '\\.js$'
   },
   templates: {
-    copyright: 'Copyright 2018 Google LLC',
+    copyright: 'Copyright 2018 Google, LLC.',
     includeDate: false,
     sourceFiles: false,
-    systemName: 'gce-images',
+    systemName: 'google-cloud-kvstore',
     theme: 'lumen'
   }
 };
