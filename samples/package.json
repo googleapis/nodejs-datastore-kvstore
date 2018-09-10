@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=8"
   },
-  "repository": "GoogleCloudPlatform/google-cloud-kvstore",
+  "repository": "googleapis/google-cloud-kvstore",
   "private": true,
   "scripts": {
     "test": "mocha system-test"
