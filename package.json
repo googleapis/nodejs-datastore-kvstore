@@ -23,7 +23,7 @@
     "pretest": "npm run compile",
     "posttest": "npm run check"
   },
-  "repository": "GoogleCloudPlatform/google-cloud-kvstore",
+  "repository": "googleapis/google-cloud-kvstore",
   "keywords": [
     "gcloud",
     "google",
