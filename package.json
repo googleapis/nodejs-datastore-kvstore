@@ -18,10 +18,11 @@
     "check": "gts check",
     "clean": "gts clean",
     "compile": "tsc -p .",
-    "fix": "gts fix",
+    "fix": "gts fix && eslint --fix 'samples/*.js'",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run check"
+    "posttest": "npm run check",
+    "presystem-test": "npm run compile"
   },
   "repository": "googleapis/google-cloud-kvstore",
   "keywords": [
@@ -36,6 +37,7 @@
   "author": "Stephen Sawchuk",
   "license": "MIT",
   "devDependencies": {
+    "@google-cloud/datastore": "^1.4.2",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.5.6",
     "codecov": "^3.0.4",

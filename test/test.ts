@@ -16,7 +16,8 @@ function getDataset(): DataSet {
     delete: (key: Key, callback: DeleteCallback) => {},
     get: (key: Key, callback: GetCallback) => {},
     save: (request: SetRequest, callback: SetCallback) => {}
-  };
+    // tslint:disable-next-line no-any
+  } as any;
 }
 
 function noop() {}
@@ -55,7 +56,8 @@ it('delete, get, and set pipe through calls to the dataset', () => {
   let getCalled = false;
   let saveCalled = false;
 
-  const ds = getDataset();
+  // tslint:disable-next-line no-any
+  const ds: any = getDataset();
   ds.delete = () => {
     deleteCalled = true;
   };
@@ -71,7 +73,7 @@ it('delete, get, and set pipe through calls to the dataset', () => {
   kvstore.delete(1, noop);
   assert.strictEqual(deleteCalled, true);
 
-  kvstore.get(1, null!);
+  kvstore.get(1, noop);
   assert.strictEqual(getCalled, true);
 
   kvstore.set(1, null, noop);
