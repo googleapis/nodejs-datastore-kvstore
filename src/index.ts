@@ -17,22 +17,26 @@ export type DeleteCallback = (err?: Error) => void;
 export type SetCallback = (err?: Error) => void;
 export type GetCallback = (err: Error|null, entity?: Entity) => void;
 
+// tslint:disable-next-line no-any
+export type Value = any;
+
 export interface Entity {
-  // tslint:disable-next-line no-any
-  value: any;
+  value: Value;
 }
 
 export interface SetRequest {
   key: Key;
-  // tslint:disable-next-line no-any
-  data: any;
+  data: Value;
 }
 
 export interface DataSet {
   key(input: Key[]): Key;
+  delete(key: Key): Promise<void>;
   delete(key: Key, callback: DeleteCallback): void;
   get(key: Key, callback: GetCallback): void;
+  get(key: Key): Promise<[Entity]>;
   save(request: SetRequest, callback: SetCallback): void;
+  save(request: SetRequest): Promise<void>;
 }
 
 export class KVStore {
@@ -44,19 +48,31 @@ export class KVStore {
     this.dataset = dataset;
   }
 
-  delete(key: Key, callback: DeleteCallback) {
+  delete(key: Key): Promise<void>;
+  delete(key: Key, callback: DeleteCallback): void;
+  delete(key: Key, callback?: DeleteCallback): void|Promise<void> {
     if (!isValidKey(key)) {
       throw new Error(invalidKeyError);
     }
     key = this.dataset.key(['KeyValue', key]);
+    if (!callback) {
+      return this.dataset.delete(key);
+    }
     this.dataset.delete(key, callback);
   }
 
-  get(key: Key, callback: GetCallback) {
+  get(key: Key): Promise<Entity>;
+  get(key: Key, callback: GetCallback): void;
+  get(key: Key, callback?: GetCallback): void|Promise<Entity> {
     if (!isValidKey(key)) {
       throw new Error(invalidKeyError);
     }
     key = this.dataset.key(['KeyValue', key]);
+    if (!callback) {
+      return this.dataset.get(key).then(x => {
+        return x[0] && x[0].value;
+      });
+    }
     this.dataset.get(key, (err, entity) => {
       if (err) {
         callback(err);
@@ -66,18 +82,22 @@ export class KVStore {
     });
   }
 
-  // tslint:disable-next-line no-any
-  set(key: Key, value: any, callback: SetCallback) {
+  set(key: Key, value: Value): Promise<void>;
+  set(key: Key, value: Value, callback: SetCallback): void;
+  set(key: Key, value: Value, callback?: SetCallback): void|Promise<void> {
     if (!isValidKey(key)) {
       throw new Error(invalidKeyError);
     }
-    this.dataset.save(
-        {
-          key: this.dataset.key(['KeyValue', key]),
-          data: {
-            value,
-          },
-        },
-        callback || (() => {}));
+    const request = {
+      key: this.dataset.key(['KeyValue', key]),
+      data: {
+        value,
+      },
+    };
+
+    if (!callback) {
+      return this.dataset.save(request);
+    }
+    this.dataset.save(request, callback);
   }
 }

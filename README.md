@@ -4,16 +4,15 @@
 
 ## Install
 ```sh
-$ npm install --save google-cloud-kvstore
+$ npm install google-cloud-kvstore
 ```
-
 
 ## Example
 ```js
-const kvstore = require('google-cloud-kvstore');
+const {KVStore} = require('google-cloud-kvstore');
 const datastore = require('@google-cloud/datastore')(/*...*/);
 
-const store = kvstore(datastore);
+const store = new KVStore(datastore);
 
 // Set an item.
 store.set('todos', ['eat', 'sleep', 'repeat'], (err, key) => {});
@@ -50,7 +49,8 @@ datastore.delete(key, () => {});
 
 #### With `@google-cloud/datastore` + `google-cloud-kvstore`:
 ```js
-const store = require('google-cloud-kvstore')(datastore);
+const {KVStore} = require('google-cloud-kvstore');
+const store = new KVStore(datastore);
 store.set('key', 'value', () => {});
 store.get('key', () => {});
 store.delete('key', () => {});
@@ -96,10 +96,7 @@ Executed with the same signature as [Datastore#save](https://googlecloudplatform
 
 
 ## Credit
-
 Concept originally created by [Patrick Costello](https://github.com/pcostell): https://github.com/GoogleCloudPlatform/google-cloud-node/issues/256#issuecomment-58962323.
 
-
 ## License
-
-MIT © Stephen Sawchuk
+MIT
