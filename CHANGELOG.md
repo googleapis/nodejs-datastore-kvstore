@@ -4,7 +4,7 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
-## v4.0.0
+## v5.0.0
 
 **BREAKING CHANGES**. The import style of this library has changed to support es-module style syntax.
 
@@ -53,4 +53,3 @@ const store = new KVStore(datastore);
 - fixy
 - chore: make it OSPO compliant
 - RENAME to google-cloud-kvstore
-
