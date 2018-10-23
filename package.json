@@ -37,7 +37,7 @@
   "author": "Stephen Sawchuk",
   "license": "MIT",
   "devDependencies": {
-    "@google-cloud/datastore": "^1.4.2",
+    "@google-cloud/datastore": "^2.0.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.5.6",
     "codecov": "^3.0.4",
