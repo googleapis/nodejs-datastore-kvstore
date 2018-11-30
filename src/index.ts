@@ -5,8 +5,6 @@
  * See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
  */
 
-'use strict';
-
 const invalidKeyError = 'Invalid key. Only a string or number may be used.';
 function isValidKey(key: Key) {
   return typeof key === 'string' || typeof key === 'number';
@@ -42,9 +40,6 @@ export interface DataSet {
 export class KVStore {
   dataset: DataSet;
   constructor(dataset: DataSet) {
-    if (!(this instanceof KVStore)) {
-      return new KVStore(dataset);
-    }
     this.dataset = dataset;
   }
 
