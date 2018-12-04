@@ -3,3 +3,4 @@ docs/
 build/
 .nyc_output
 package-lock.json
+__pycache__
