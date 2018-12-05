@@ -11,7 +11,6 @@
     "cover": "nyc --reporter=lcov mocha build/test && nyc report",
     "docs": "echo no docs 👻",
     "lint": "eslint samples/ && npm run check",
-    "prettier": "prettier --write samples/*.js",
     "test": "nyc mocha build/test",
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "system-test": "mocha build/system-test --timeout 600000",
