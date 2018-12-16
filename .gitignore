@@ -4,3 +4,4 @@ build/
 .nyc_output
 package-lock.json
 __pycache__
+.coverage

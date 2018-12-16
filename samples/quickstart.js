@@ -18,7 +18,7 @@ const store = new KVStore(datastore);
  */
 async function set() {
   await store.set('todos', ['eat', 'sleep', 'repeat']);
-  console.log('Set some values in the datastore.!');
+  console.log('Set some values in the datastore.');
 }
 
 /**
