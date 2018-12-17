@@ -18,7 +18,6 @@
     "fix": "gts fix && eslint --fix '**/*.js'",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run lint",
     "presystem-test": "npm run compile"
   },
   "repository": "googleapis/google-cloud-kvstore",
