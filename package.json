@@ -8,19 +8,16 @@
     "build/src"
   ],
   "scripts": {
-    "cover": "nyc --reporter=lcov mocha build/test && nyc report",
     "docs": "echo no docs 👻",
-    "lint": "eslint samples/ && npm run check",
+    "lint": "eslint '**/*.js' && gts check",
     "test": "nyc mocha build/test",
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "system-test": "mocha build/system-test --timeout 600000",
-    "check": "gts check",
     "clean": "gts clean",
     "compile": "tsc -p .",
-    "fix": "gts fix && eslint --fix 'samples/*.js'",
+    "fix": "gts fix && eslint --fix '**/*.js'",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run check",
     "presystem-test": "npm run compile"
   },
   "repository": "googleapis/google-cloud-kvstore",
