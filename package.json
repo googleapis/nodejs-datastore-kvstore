@@ -8,7 +8,7 @@
     "build/src"
   ],
   "scripts": {
-    "docs": "echo no docs 👻",
+    "docs": "compodoc src/",
     "lint": "eslint '**/*.js' && gts check",
     "test": "nyc mocha build/test",
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
@@ -33,6 +33,7 @@
   "author": "Stephen Sawchuk",
   "license": "MIT",
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.7",
     "@google-cloud/datastore": "^2.0.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.5.6",
@@ -42,9 +43,7 @@
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "gts": "^0.9.0",
-    "jsdoc-baseline": "git+https://github.com/hegemonic/jsdoc-baseline.git",
     "intelli-espower-loader": "^1.0.1",
-    "jsdoc": "^3.5.5",
     "mocha": "^5.2.0",
     "nyc": "^13.0.0",
     "power-assert": "^1.6.0",
