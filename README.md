@@ -62,7 +62,7 @@ store.delete('key', () => {});
 
 #### datastore
 
-A [@google-cloud/datastore](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/latest/datastore) instance.
+A [@google-cloud/datastore](https://cloud.google.com/nodejs/docs/reference/datastore/latest/Datastore) instance.
 
 ### kvstore#delete(key, callback)
 
@@ -71,7 +71,7 @@ Type: `String|Number`
 
 #### callback
 Type: `Function`
-Executed with the same signature as [Datastore#delete](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/latest/datastore?method=delete).
+Executed with the same signature as [Datastore#delete](https://cloud.google.com/nodejs/docs/reference/datastore/latest/Datastore#delete).
 
 ### kvstore#get(key, callback)
 
@@ -92,7 +92,7 @@ Type: `*`
 
 #### callback
 Type: `Function`
-Executed with the same signature as [Datastore#save](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/latest/datastore?method=save).
+Executed with the same signature as [Datastore#save](https://cloud.google.com/nodejs/docs/reference/datastore/latest/Datastore#save).
 
 
 ## Credit
