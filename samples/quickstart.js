@@ -6,7 +6,9 @@
  */
 
 const {KVStore} = require('google-cloud-kvstore');
-const datastore = require('@google-cloud/datastore')();
+const {Datastore} = require('@google-cloud/datastore');
+
+const datastore = new Datastore();
 
 /**
  * Create the store
