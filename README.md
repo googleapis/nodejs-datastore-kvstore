@@ -10,8 +10,9 @@ $ npm install google-cloud-kvstore
 ## Example
 ```js
 const {KVStore} = require('google-cloud-kvstore');
-const datastore = require('@google-cloud/datastore')(/*...*/);
+const {Datastore} = require('@google-cloud/datastore');
 
+const datastore = new Datastore();
 const store = new KVStore(datastore);
 
 // Set an item.

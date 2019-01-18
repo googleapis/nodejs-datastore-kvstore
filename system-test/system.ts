@@ -7,8 +7,9 @@
 
 import * as assert from 'assert';
 import {KVStore} from '../src';
-const datastore = require('@google-cloud/datastore')();
+const {Datastore} = require('@google-cloud/datastore');
 
+const datastore = new Datastore();
 const key = 'todos';
 const value = ['eat', 'sleep', 'repeat'];
 const store = new KVStore(datastore);
