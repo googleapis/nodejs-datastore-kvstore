@@ -4,6 +4,47 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+## v6.0.0
+
+01-31-2019 23:20 PST
+
+### Dependencies
+- fix(deps): update dependency @google-cloud/datastore to v3 ([#93](https://github.com/googleapis/google-cloud-kvstore/pull/93))
+- fix(deps): update dependency @google-cloud/datastore to v2 ([#53](https://github.com/googleapis/google-cloud-kvstore/pull/53))
+
+### Internal / Testing Changes
+- chore(deps): update dependency eslint-config-prettier to v4 ([#95](https://github.com/googleapis/google-cloud-kvstore/pull/95))
+- build: ignore googleapis.com in doc link check ([#94](https://github.com/googleapis/google-cloud-kvstore/pull/94))
+- build: check broken links in generated docs ([#91](https://github.com/googleapis/google-cloud-kvstore/pull/91))
+- test: add sample tests ([#90](https://github.com/googleapis/google-cloud-kvstore/pull/90))
+- chore(build): inject yoshi automation key ([#89](https://github.com/googleapis/google-cloud-kvstore/pull/89))
+- chore: update nyc and eslint configs ([#88](https://github.com/googleapis/google-cloud-kvstore/pull/88))
+- chore: fix publish.sh permission +x ([#86](https://github.com/googleapis/google-cloud-kvstore/pull/86))
+- fix(build): fix Kokoro release script ([#85](https://github.com/googleapis/google-cloud-kvstore/pull/85))
+- build: add Kokoro configs for autorelease ([#84](https://github.com/googleapis/google-cloud-kvstore/pull/84))
+- chore: always nyc report before calling codecov ([#82](https://github.com/googleapis/google-cloud-kvstore/pull/82))
+- chore: nyc ignore build/test by default ([#81](https://github.com/googleapis/google-cloud-kvstore/pull/81))
+- chore: clean up usage of prettier and eslint ([#80](https://github.com/googleapis/google-cloud-kvstore/pull/80))
+- chore: update synth metadata and templates ([#78](https://github.com/googleapis/google-cloud-kvstore/pull/78))
+- fix(build): fix system key decryption ([#73](https://github.com/googleapis/google-cloud-kvstore/pull/73))
+- chore(deps): update dependency typescript to ~3.2.0 ([#72](https://github.com/googleapis/google-cloud-kvstore/pull/72))
+- chore: add synth.metadata
+- chore(deps): update dependency gts to ^0.9.0 ([#69](https://github.com/googleapis/google-cloud-kvstore/pull/69))
+- chore: update eslintignore config ([#68](https://github.com/googleapis/google-cloud-kvstore/pull/68))
+- chore: use latest npm on Windows ([#67](https://github.com/googleapis/google-cloud-kvstore/pull/67))
+- chore: update CircleCI config ([#66](https://github.com/googleapis/google-cloud-kvstore/pull/66))
+- chore: include build in eslintignore ([#63](https://github.com/googleapis/google-cloud-kvstore/pull/63))
+- chore(deps): update dependency eslint-plugin-node to v8 ([#59](https://github.com/googleapis/google-cloud-kvstore/pull/59))
+- chore: update issue templates ([#58](https://github.com/googleapis/google-cloud-kvstore/pull/58))
+- chore: remove old issue template ([#56](https://github.com/googleapis/google-cloud-kvstore/pull/56))
+- build: run tests on node11 ([#55](https://github.com/googleapis/google-cloud-kvstore/pull/55))
+- chores(build): run codecov on continuous builds ([#49](https://github.com/googleapis/google-cloud-kvstore/pull/49))
+- chore(deps): update dependency eslint-plugin-prettier to v3 ([#52](https://github.com/googleapis/google-cloud-kvstore/pull/52))
+- chore(deps): update dependency typescript to ~3.1.0 ([#51](https://github.com/googleapis/google-cloud-kvstore/pull/51))
+- chores(build): do not collect sponge.xml from windows builds ([#50](https://github.com/googleapis/google-cloud-kvstore/pull/50))
+- chore: update new issue template ([#48](https://github.com/googleapis/google-cloud-kvstore/pull/48))
+- build: fix codecov uploading on Kokoro ([#45](https://github.com/googleapis/google-cloud-kvstore/pull/45))
+
 ## v5.0.0
 
 **BREAKING CHANGES**. The import style of this library has changed to support es-module style syntax.
