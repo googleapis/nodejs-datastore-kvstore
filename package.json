@@ -18,7 +18,9 @@
     "fix": "gts fix && eslint --fix '**/*.js'",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "presystem-test": "npm run compile"
+    "presystem-test": "npm run compile",
+    "docs-test": "blcl docs -r --exclude www.googleapis.com",
+    "predocs-test": "npm run docs"
   },
   "repository": "googleapis/google-cloud-kvstore",
   "keywords": [
@@ -49,6 +51,7 @@
     "power-assert": "^1.6.0",
     "prettier": "^1.14.0",
     "source-map-support": "^0.5.6",
-    "typescript": "~3.3.0"
+    "typescript": "~3.3.0",
+    "broken-link-checker-local": "^0.2.0"
   }
 }
