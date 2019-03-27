@@ -1,103 +1,78 @@
-# google-cloud-kvstore
-> Use Datastore as a Key/Value store.
+[//]: # "This README.md file is auto-generated, all changes to this file will be lost."
+[//]: # "To regenerate it, use `python -m synthtool`."
+<img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
+
+# [:  Client](https://github.com/)
+
+None
+[![npm version](https://img.shields.io/npm/v/google-cloud-kvstore.svg)](https://www.npmjs.org/package/google-cloud-kvstore)
+[![codecov](https://img.shields.io/codecov/c/github//master.svg?style=flat)](https://codecov.io/gh/)
 
 
-## Install
-```sh
-$ npm install google-cloud-kvstore
-```
-
-## Example
-```js
-const {KVStore} = require('google-cloud-kvstore');
-const {Datastore} = require('@google-cloud/datastore');
-
-const datastore = new Datastore();
-const store = new KVStore(datastore);
-
-// Set an item.
-store.set('todos', ['eat', 'sleep', 'repeat'], (err, key) => {});
-
-// Get an item.
-store.get('todos', (err, todos) => {
-  // todos:
-  //   ['eat', 'sleep', 'repeat']
-});
-
-// Delete an item.
-store.delete('todos', (err) => {});
-```
+Use @google-cloud/datastore as a key-value store.
 
 
-## How
-[Google Cloud Datastore](https://cloud.google.com/datastore) is a managed, NoSQL, schemaless database for storing non-relational data. Datastore [entities](https://cloud.google.com/datastore/docs/concepts/entities) are complex objects. However, we can wrap this complexity to mimic a simple key/value store by storing a numeric or string "key" as the id of an entity.
+* [Using the client library](#using-the-client-library)
+* [Versioning](#versioning)
+* [Contributing](#contributing)
+* [License](#license)
 
-The example below shows the complexity that is hidden with `google-cloud-kvstore`.
+## Using the client library
 
-#### With `@google-cloud/datastore`:
-```js
-const key = datastore.key(['KeyValue', 'key']);
+1.  [Select or create a Cloud Platform project][projects].
+1.  [Enable the  API][enable_api].
+1.  [Set up authentication with a service account][auth] so you can access the
+    API from your local workstation.
 
-datastore.save({
-  key: key,
-  value: 'value'
-}, () => {});
+1. Install the client library:
 
-datastore.get(key, () => {});
-
-datastore.delete(key, () => {});
-```
-
-#### With `@google-cloud/datastore` + `google-cloud-kvstore`:
-```js
-const {KVStore} = require('google-cloud-kvstore');
-const store = new KVStore(datastore);
-store.set('key', 'value', () => {});
-store.get('key', () => {});
-store.delete('key', () => {});
-```
-
-## API
-
-### kvstore(datastore)
-
-#### datastore
-
-A [@google-cloud/datastore](https://cloud.google.com/nodejs/docs/reference/datastore/latest/Datastore) instance.
-
-### kvstore#delete(key, callback)
-
-#### key
-Type: `String|Number`
-
-#### callback
-Type: `Function`
-Executed with the same signature as [Datastore#delete](https://cloud.google.com/nodejs/docs/reference/datastore/latest/Datastore#delete).
-
-### kvstore#get(key, callback)
-
-#### key
-Type: `String|Number`
-
-#### callback
-Type: `Function`
-Executed with (`err`, `value`)
-
-### kvstore#set(key, value, callback)
-
-#### key
-Type: `String|Number`
-
-#### value
-Type: `*`
-
-#### callback
-Type: `Function`
-Executed with the same signature as [Datastore#save](https://cloud.google.com/nodejs/docs/reference/datastore/latest/Datastore#save).
+        npm install google-cloud-kvstore
 
 
-## Credit
-Concept originally created by [Patrick Costello](https://github.com/pcostell): https://github.com/GoogleCloudPlatform/google-cloud-node/issues/256#issuecomment-58962323.
+
+
+
+The [  Client API Reference][client-docs] documentation
+also contains samples.
+
+## Versioning
+
+This library follows [Semantic Versioning](http://semver.org/).
+
+
+
+
+
+
+More Information: [Google Cloud Platform Launch Stages][launch_stages]
+
+[launch_stages]: https://cloud.google.com/terms/launch-stages
+
+## Contributing
+
+Contributions welcome! See the [Contributing Guide](https://github.com//blob/master/CONTRIBUTING.md).
 
 ## License
-MIT
+
+Apache Version 2.0
+
+See [LICENSE](https://github.com//blob/master/LICENSE)
+
+## What's Next
+
+* [ Documentation][product-docs]
+* [  Client API Reference][client-docs]
+* [github.com/](https://github.com/)
+
+Read more about the client libraries for Cloud APIs, including the older
+Google APIs Client Libraries, in [Client Libraries Explained][explained].
+
+[explained]: https://cloud.google.com/apis/docs/client-libraries-explained
+
+[client-docs]: 
+[product-docs]: 
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
+[projects]: https://console.cloud.google.com/project
+[billing]: https://support.google.com/cloud/answer/6293499#enable-billing
+[enable_api]: https://console.cloud.google.com/flows/enableapi?apiid=
+[auth]: https://cloud.google.com/docs/authentication/getting-started
