@@ -10,10 +10,10 @@ function isValidKey(key: Key) {
   return typeof key === 'string' || typeof key === 'number';
 }
 
-export type Key = string|number;
+export type Key = string | number;
 export type DeleteCallback = (err?: Error) => void;
 export type SetCallback = (err?: Error) => void;
-export type GetCallback = (err: Error|null, entity?: Entity) => void;
+export type GetCallback = (err: Error | null, entity?: Entity) => void;
 
 // tslint:disable-next-line no-any
 export type Value = any;
@@ -45,7 +45,7 @@ export class KVStore {
 
   delete(key: Key): Promise<void>;
   delete(key: Key, callback: DeleteCallback): void;
-  delete(key: Key, callback?: DeleteCallback): void|Promise<void> {
+  delete(key: Key, callback?: DeleteCallback): void | Promise<void> {
     if (!isValidKey(key)) {
       throw new Error(invalidKeyError);
     }
@@ -58,7 +58,7 @@ export class KVStore {
 
   get(key: Key): Promise<Entity>;
   get(key: Key, callback: GetCallback): void;
-  get(key: Key, callback?: GetCallback): void|Promise<Entity> {
+  get(key: Key, callback?: GetCallback): void | Promise<Entity> {
     if (!isValidKey(key)) {
       throw new Error(invalidKeyError);
     }
@@ -79,7 +79,7 @@ export class KVStore {
 
   set(key: Key, value: Value): Promise<void>;
   set(key: Key, value: Value, callback: SetCallback): void;
-  set(key: Key, value: Value, callback?: SetCallback): void|Promise<void> {
+  set(key: Key, value: Value, callback?: SetCallback): void | Promise<void> {
     if (!isValidKey(key)) {
       throw new Error(invalidKeyError);
     }
