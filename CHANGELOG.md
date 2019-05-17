@@ -4,6 +4,23 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+## [7.0.0](https://www.github.com/googleapis/google-cloud-kvstore/compare/v6.0.0...v7.0.0) (2019-05-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @google-cloud/datastore to v4 ([#131](https://www.github.com/googleapis/google-cloud-kvstore/issues/131)) ([6a55055](https://www.github.com/googleapis/google-cloud-kvstore/commit/6a55055))
+
+
+### Build System
+
+* upgrade engines field to >=8.10.0 ([#124](https://www.github.com/googleapis/google-cloud-kvstore/issues/124)) ([afd86da](https://www.github.com/googleapis/google-cloud-kvstore/commit/afd86da))
+
+
+### BREAKING CHANGES
+
+* upgrade engines field to >=8.10.0 (#124)
+
 ## v6.0.0
 
 01-31-2019 23:20 PST
