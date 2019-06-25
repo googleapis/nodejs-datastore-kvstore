@@ -41,5 +41,8 @@ module.exports = {
     sourceFiles: false,
     systemName: 'google-cloud-kvstore',
     theme: 'lumen'
+  },
+  markdown: {
+    idInHeadings: true
   }
 };
