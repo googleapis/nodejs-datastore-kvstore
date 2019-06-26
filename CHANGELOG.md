@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+### [7.0.1](https://www.github.com/googleapis/google-cloud-kvstore/compare/v7.0.0...v7.0.1) (2019-06-26)
+
+
+### Bug Fixes
+
+* **docs:** make anchors work in jsdoc ([#141](https://www.github.com/googleapis/google-cloud-kvstore/issues/141)) ([f27fa8c](https://www.github.com/googleapis/google-cloud-kvstore/commit/f27fa8c))
+
 ## [7.0.0](https://www.github.com/googleapis/google-cloud-kvstore/compare/v6.0.0...v7.0.0) (2019-05-17)
 
 
