@@ -1,0 +1,11 @@
+{
+  "name": "google-cloud-kvstore",
+  "name_pretty": "Cloud Datastore KVStore",
+  "product_documentation": "https://cloud.google.com/datastore",
+  "client_documentation": "https://googleapis.dev/nodejs/google-cloud-kvstore/latest",
+  "issue_tracker": "https://github.com/googleapis/google-cloud-kvstore/issues",
+  "release_level": "ga",
+  "language": "nodejs",
+  "repo": "googleapis/google-cloud-kvstore",
+  "distribution_name": "google-cloud-kvstore"
+}
