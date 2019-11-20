@@ -22,7 +22,7 @@
     "docs-test": "linkinator docs",
     "predocs-test": "npm run docs"
   },
-  "repository": "googleapis/google-cloud-kvstore",
+  "repository": "googleapis/nodejs-datastore-kvstore",
   "keywords": [
     "gcloud",
     "google",
