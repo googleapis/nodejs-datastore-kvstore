@@ -4,6 +4,14 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+### [7.0.2](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v7.0.1...v7.0.2) (2019-11-21)
+
+
+### Bug Fixes
+
+* add repo metadata ([#159](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/159)) ([6eafd3a](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/6eafd3aff81227bff44ee40e8042c258e807cae4))
+* **docs:** add jsdoc-region-tag plugin ([#162](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/162)) ([9429c5f](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/9429c5f080f18cf852c7d9cedc4f7e92f30e96a2))
+
 ### [7.0.1](https://www.github.com/googleapis/google-cloud-kvstore/compare/v7.0.0...v7.0.1) (2019-06-26)
 
 
