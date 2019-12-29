@@ -20,6 +20,7 @@
 'use strict';
 
 import * as assert from 'assert';
+import {describe, it} from 'mocha';
 import {
   KVStore,
   Key,
