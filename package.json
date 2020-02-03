@@ -1,6 +1,6 @@
 {
   "name": "google-cloud-kvstore",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Use @google-cloud/datastore as a key-value store.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "docs": "compodoc src/",
     "lint": "eslint '**/*.js' && gts check",
-    "test": "nyc mocha build/test",
+    "test": "c8 mocha build/test",
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "system-test": "mocha build/system-test --timeout 600000",
     "clean": "gts clean",
@@ -22,7 +22,7 @@
     "docs-test": "linkinator docs",
     "predocs-test": "npm run docs"
   },
-  "repository": "googleapis/google-cloud-kvstore",
+  "repository": "googleapis/nodejs-datastore-kvstore",
   "keywords": [
     "gcloud",
     "google",
@@ -36,20 +36,21 @@
   "license": "MIT",
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.7",
-    "@google-cloud/datastore": "^4.0.0",
-    "@types/mocha": "^5.2.5",
+    "@google-cloud/datastore": "^5.0.0",
+    "@types/mocha": "^7.0.0",
     "@types/node": "^10.5.6",
     "codecov": "^3.0.4",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "gts": "^1.0.0",
     "linkinator": "^1.5.0",
-    "mocha": "^6.1.4",
-    "nyc": "^14.0.0",
+    "mocha": "^7.0.0",
+    "c8": "^7.0.0",
     "prettier": "^1.14.0",
-    "typescript": "~3.6.0"
+    "source-map-support": "^0.5.6",
+    "typescript": "3.6.4"
   },
   "engines": {
     "node": ">=8.10.0"
