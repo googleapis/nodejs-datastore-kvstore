@@ -51,7 +51,7 @@
     "mocha": "^7.0.0",
     "c8": "^7.0.0",
     "power-assert": "^1.6.0",
-    "prettier": "^1.14.0",
+    "prettier": "^2.0.0",
     "source-map-support": "^0.5.6",
     "typescript": "3.6.4"
   },
