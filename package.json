@@ -1,6 +1,6 @@
 {
   "name": "google-cloud-kvstore",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "description": "Use @google-cloud/datastore as a key-value store.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
