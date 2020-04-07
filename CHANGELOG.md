@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+### [7.0.3](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v7.0.2...v7.0.3) (2020-04-07)
+
+
+### Bug Fixes
+
+* apache license URL ([#468](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/468)) ([#201](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/201)) ([7504954](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/7504954fb48d8ce72631af62134fa03af517aba8))
+
 ### [7.0.2](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v7.0.1...v7.0.2) (2020-01-06)
 
 
