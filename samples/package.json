@@ -3,7 +3,7 @@
   "license": "MIT",
   "author": "Google LLC",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "files": [
     "*.js"
@@ -11,7 +11,7 @@
   "repository": "googleapis/google-cloud-kvstore",
   "private": true,
   "scripts": {
-    "test": "mocha system-test --timeout 10000"
+    "test": "mocha --timeout 10000"
   },
   "dependencies": {
     "@google-cloud/datastore": "^5.0.0",

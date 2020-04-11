@@ -13,25 +13,28 @@
 // limitations under the License.
 
 import * as assert from 'assert';
-import {KVStore} from '../src';
-const {Datastore} = require('@google-cloud/datastore');
+import {Datastore} from '@google-cloud/datastore';
+import {describe, it} from 'mocha';
+import {KVStore, DataSet} from '../src';
 
-const datastore = new Datastore();
-const key = 'todos';
-const value = ['eat', 'sleep', 'repeat'];
-const store = new KVStore(datastore);
+describe('system tests', () => {
+  const datastore = new Datastore();
+  const key = 'todos';
+  const value = ['eat', 'sleep', 'repeat'];
+  const store = new KVStore((datastore as {}) as DataSet);
 
-it('should set values', async () => {
-  await store.set(key, value);
-});
+  it('should set values', async () => {
+    await store.set(key, value);
+  });
 
-it('should get the same values', async () => {
-  const todos = await store.get(key);
-  assert.deepStrictEqual(todos, value);
-});
+  it('should get the same values', async () => {
+    const todos = await store.get(key);
+    assert.deepStrictEqual(todos, value);
+  });
 
-it('should remove the data', async () => {
-  await store.delete(key);
-  const data = await store.get(key);
-  assert.strictEqual(data, undefined);
+  it('should remove the data', async () => {
+    await store.delete(key);
+    const data = await store.get(key);
+    assert.strictEqual(data, undefined);
+  });
 });

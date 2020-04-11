@@ -22,7 +22,7 @@ export type DeleteCallback = (err?: Error) => void;
 export type SetCallback = (err?: Error) => void;
 export type GetCallback = (err: Error | null, entity?: Entity) => void;
 
-// tslint:disable-next-line no-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Value = any;
 
 export interface Entity {
