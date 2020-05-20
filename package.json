@@ -34,8 +34,8 @@
     "keyvalue",
     "store"
   ],
-  "author": "Stephen Sawchuk",
-  "license": "MIT",
+  "author": "Google LLC.",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.7",
     "@google-cloud/datastore": "^5.0.0",

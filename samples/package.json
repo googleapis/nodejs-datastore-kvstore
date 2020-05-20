@@ -1,7 +1,7 @@
 {
   "description": "Samples for the google-cloud-kvstore npm module.",
-  "license": "MIT",
-  "author": "Google LLC",
+  "license": "Apache-2.0",
+  "author": "Google LLC.",
   "engines": {
     "node": ">=10"
   },
