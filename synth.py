@@ -8,6 +8,6 @@ AUTOSYNTH_MULTIPLE_COMMITS = True
 
 common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library()
-s.copy(templates, excludes=["LICENSE", "README.md"])
+s.copy(templates)
 node.install()
 node.fix()
