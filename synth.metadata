@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-datastore-kvstore.git",
-        "sha": "c1b7ad451570bcea459b9a17dbc778d3e4398cb2"
+        "sha": "db76512c417322d6dead25e971d4dac720b1d110"
       }
     },
     {
