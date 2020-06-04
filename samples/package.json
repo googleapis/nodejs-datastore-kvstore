@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@google-cloud/datastore": "^6.0.0",
-    "google-cloud-kvstore": "^7.0.2"
+    "google-cloud-kvstore": "^8.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
