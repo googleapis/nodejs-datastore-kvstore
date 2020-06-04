@@ -4,6 +4,24 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+## [8.0.0](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v7.0.2...v8.0.0) (2020-06-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for node.js 8 (#204)
+
+### Bug Fixes
+
+* apache license URL ([#468](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/468)) ([#201](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/201)) ([7504954](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/7504954fb48d8ce72631af62134fa03af517aba8))
+* update license to Apache-2.0 ([#213](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/213)) ([db76512](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/db76512c417322d6dead25e971d4dac720b1d110))
+* **deps:** update dependency @google-cloud/datastore to v6 ([#215](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/215)) ([3128a65](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/3128a65358c550aa8314ccfd2494be4d72057608))
+
+
+### Build System
+
+* drop support for node.js 8 ([#204](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/204)) ([d906d2a](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/d906d2a6275fc814a17698581b675e7415be562f))
+
 ### [7.0.2](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v7.0.1...v7.0.2) (2020-01-06)
 
 
