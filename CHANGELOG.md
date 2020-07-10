@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+### [8.0.1](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v8.0.0...v8.0.1) (2020-07-09)
+
+
+### Bug Fixes
+
+* typeo in nodejs .gitattribute ([#222](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/222)) ([57648f3](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/57648f308c4e5844378015ef83a783eb66d6cd20))
+
 ## [8.0.0](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v7.0.2...v8.0.0) (2020-06-04)
 
 
