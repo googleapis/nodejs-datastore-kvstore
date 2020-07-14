@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-datastore-kvstore.git",
-        "sha": "500be8996415e65ba032a1b02a5de8923db04377"
+        "sha": "5145adea23aeaee2e9acca1e212c9cbae0320c9a"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "799d8e6522c1ef7cb55a70d9ea0b15e045c3d00b"
+        "sha": "d82deccf657a66e31bd5da9efdb96c6fa322fc7e"
       }
     }
   ]
