@@ -14,6 +14,9 @@
 Use @google-cloud/datastore as a key-value store.
 
 
+A comprehensive list of changes in each version may be found in
+[the CHANGELOG](https://github.com/googleapis/google-cloud-kvstore/blob/master/CHANGELOG.md).
+
 * [Cloud Datastore KVStore Node.js Client API Reference][client-docs]
 * [Cloud Datastore KVStore Documentation][product-docs]
 * [github.com/googleapis/google-cloud-kvstore](https://github.com/googleapis/google-cloud-kvstore)
