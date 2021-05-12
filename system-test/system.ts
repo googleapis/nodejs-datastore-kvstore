@@ -23,7 +23,7 @@ describe('system tests', () => {
   const datastore = new Datastore();
   const key = 'todos';
   const value = ['eat', 'sleep', 'repeat'];
-  const store = new KVStore((datastore as {}) as DataSet);
+  const store = new KVStore(datastore as {} as DataSet);
 
   it('should set values', async () => {
     await store.set(key, value);
