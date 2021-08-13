@@ -6,7 +6,7 @@
 
 [![release level](https://img.shields.io/badge/release%20level-general%20availability%20%28GA%29-brightgreen.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
 [![npm version](https://img.shields.io/npm/v/google-cloud-kvstore.svg)](https://www.npmjs.org/package/google-cloud-kvstore)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/google-cloud-kvstore/master.svg?style=flat)](https://codecov.io/gh/googleapis/google-cloud-kvstore)
+[![codecov](https://img.shields.io/codecov/c/github/googleapis/google-cloud-kvstore/main.svg?style=flat)](https://codecov.io/gh/googleapis/google-cloud-kvstore)
 
 
 
@@ -15,7 +15,7 @@ Use @google-cloud/datastore as a key-value store.
 
 
 A comprehensive list of changes in each version may be found in
-[the CHANGELOG](https://github.com/googleapis/google-cloud-kvstore/blob/master/CHANGELOG.md).
+[the CHANGELOG](https://github.com/googleapis/google-cloud-kvstore/blob/main/CHANGELOG.md).
 
 * [Cloud Datastore KVStore Node.js Client API Reference][client-docs]
 * [Cloud Datastore KVStore Documentation][product-docs]
@@ -95,19 +95,19 @@ More Information: [Google Cloud Platform Launch Stages][launch_stages]
 
 ## Contributing
 
-Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/google-cloud-kvstore/blob/master/CONTRIBUTING.md).
+Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/google-cloud-kvstore/blob/main/CONTRIBUTING.md).
 
 Please note that this `README.md`, the `samples/README.md`,
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
 are generated from a central template. To edit one of these files, make an edit
-to its template in this
-[directory](https://github.com/googleapis/synthtool/tree/master/synthtool/gcp/templates/node_library).
+to its templates in
+[directory](https://github.com/googleapis/synthtool).
 
 ## License
 
 Apache Version 2.0
 
-See [LICENSE](https://github.com/googleapis/google-cloud-kvstore/blob/master/LICENSE)
+See [LICENSE](https://github.com/googleapis/google-cloud-kvstore/blob/main/LICENSE)
 
 [client-docs]: https://googleapis.dev/nodejs/google-cloud-kvstore/latest
 [product-docs]: https://cloud.google.com/datastore
