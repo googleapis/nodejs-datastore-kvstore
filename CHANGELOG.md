@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+### [8.0.2](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v8.0.1...v8.0.2) (2021-08-25)
+
+
+### Bug Fixes
+
+* **build:** migrate to using main branch ([#284](https://www.github.com/googleapis/nodejs-datastore-kvstore/issues/284)) ([ae2b381](https://www.github.com/googleapis/nodejs-datastore-kvstore/commit/ae2b3812d178ca9f2f8f2ba485bda760804d534c))
+
 ### [8.0.1](https://www.github.com/googleapis/nodejs-datastore-kvstore/compare/v8.0.0...v8.0.1) (2020-07-09)
 
 
