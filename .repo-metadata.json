@@ -8,5 +8,5 @@
   "language": "nodejs",
   "repo": "googleapis/google-cloud-kvstore",
   "distribution_name": "google-cloud-kvstore",
-  "codeowner_team": "@googleapis/firestore-dpe"
+  "codeowner_team": "@googleapis/cloud-native-db-dpes"
 }
