@@ -4,9 +4,10 @@
   "product_documentation": "https://cloud.google.com/datastore",
   "client_documentation": "https://googleapis.dev/nodejs/google-cloud-kvstore/latest",
   "issue_tracker": "https://github.com/googleapis/google-cloud-kvstore/issues",
-  "release_level": "ga",
+  "release_level": "stable",
   "language": "nodejs",
   "repo": "googleapis/google-cloud-kvstore",
   "distribution_name": "google-cloud-kvstore",
-  "codeowner_team": "@googleapis/cloud-native-db-dpes"
+  "codeowner_team": "@googleapis/cloud-native-db-dpes",
+  "library_type": "GAPIC_AUTO"
 }
