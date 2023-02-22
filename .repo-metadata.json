@@ -1,6 +1,7 @@
 {
   "name": "google-cloud-kvstore",
   "name_pretty": "Cloud Datastore KVStore",
+  "api_shortname": "datastore",
   "product_documentation": "https://cloud.google.com/datastore",
   "client_documentation": "https://googleapis.dev/nodejs/google-cloud-kvstore/latest",
   "issue_tracker": "https://github.com/googleapis/google-cloud-kvstore/issues",
@@ -8,6 +9,6 @@
   "language": "nodejs",
   "repo": "googleapis/google-cloud-kvstore",
   "distribution_name": "google-cloud-kvstore",
-  "codeowner_team": "@googleapis/cloud-native-db-dpes",
+  "codeowner_team": "@googleapis/yoshi-nodejs",
   "library_type": "GAPIC_AUTO"
 }
