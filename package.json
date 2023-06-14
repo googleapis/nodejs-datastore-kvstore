@@ -41,7 +41,7 @@
     "@google-cloud/datastore": "^7.0.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^18.0.0",
-    "c8": "^7.0.0",
+    "c8": "^8.0.0",
     "codecov": "^3.0.4",
     "gts": "^3.1.0",
     "linkinator": "^4.0.0",
