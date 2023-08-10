@@ -4,6 +4,17 @@
 
 [1]: https://www.npmjs.com/package/google-cloud-kvstore?activeTab=versions
 
+## [10.0.0](https://github.com/googleapis/nodejs-datastore-kvstore/compare/v9.0.1...v10.0.0) (2023-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to Node 14 ([#345](https://github.com/googleapis/nodejs-datastore-kvstore/issues/345))
+
+### Miscellaneous Chores
+
+* Upgrade to Node 14 ([#345](https://github.com/googleapis/nodejs-datastore-kvstore/issues/345)) ([cb6544f](https://github.com/googleapis/nodejs-datastore-kvstore/commit/cb6544fe40b56b1730cb09263e6216ecca9712ff))
+
 ## [9.0.1](https://github.com/googleapis/nodejs-datastore-kvstore/compare/v9.0.0...v9.0.1) (2022-08-23)
 
 
