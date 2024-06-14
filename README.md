@@ -10,6 +10,8 @@
 
 
 
+**_THIS REPOSITORY AND PACKAGE WILL BE DEPRECATED IN JULY 2024_**
+
 Use @google-cloud/datastore as a key-value store.
 
 
